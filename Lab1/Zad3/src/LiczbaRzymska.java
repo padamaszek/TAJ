@@ -5,7 +5,8 @@ public class LiczbaRzymska {
     private int liczba;
 
     public LiczbaRzymska(int liczba){
-    this.liczba = liczba;
+
+        this.liczba = liczba;
     }
     public static String ToRom(int arabska){
         String roman = "";
@@ -51,46 +52,7 @@ public class LiczbaRzymska {
         for(;arabska>=1;arabska=arabska-1) {
             roman = roman + "I";
         }
-/**
-        while (arabska >= 1000) {
-            roman = roman + "M";
-            arabska = arabska - 1000; }
-        while (arabska >= 900) {
-            roman = roman + "CM";
-            arabska = arabska - 900; }
-        while (arabska >= 500) {
-            roman = roman + "D";
-            arabska = arabska - 500; }
-        while (arabska >= 400) {
-            roman = roman + "CD";
-            arabska = arabska - 400; }
-        while (arabska >= 100) {
-            roman = roman + "C";
-            arabska = arabska - 100; }
-        while (arabska >= 90) {
-            roman = roman + "XC";
-            arabska = arabska - 90; }
-        while (arabska >= 50) {
-            roman = roman + "L";
-            arabska = arabska - 50; }
-        while (arabska >= 40) {
-            roman = roman + "XL";
-            arabska = arabska - 40; }
-        while (arabska >= 10) {
-            roman = roman + "X";
-            arabska = arabska - 10; }
-        while (arabska >= 9) {
-            roman = roman + "IX";
-            arabska = arabska - 9; }
-        while (arabska >= 5) {
-            roman = roman + "V";
-            arabska = arabska - 5; }
-        while (arabska >= 4) {
-            roman = roman + "IV";
-            arabska = arabska - 4; }
-        while (arabska >= 1) {
-            roman = roman + "I";
-            arabska = arabska - 1; }*/
+
         return roman;
     }
 
