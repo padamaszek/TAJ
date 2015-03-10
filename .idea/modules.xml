@@ -3,9 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Lab1/Lab1.iml" filepath="$PROJECT_DIR$/Lab1/Lab1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab2/Lab2.iml" filepath="$PROJECT_DIR$/Lab2/Lab2.iml" />
       <module fileurl="file://$PROJECT_DIR$/TAJ.iml" filepath="$PROJECT_DIR$/TAJ.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab1/Zad1/Zad1.iml" filepath="$PROJECT_DIR$/Lab1/Zad1/Zad1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab1/Zad2/Zad2.iml" filepath="$PROJECT_DIR$/Lab1/Zad2/Zad2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab2/Zad21/Zad21.iml" filepath="$PROJECT_DIR$/Lab2/Zad21/Zad21.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab1/Zad3/Zad3.iml" filepath="$PROJECT_DIR$/Lab1/Zad3/Zad3.iml" />
     </modules>
   </component>
