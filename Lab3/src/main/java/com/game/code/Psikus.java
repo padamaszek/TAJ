@@ -27,17 +27,13 @@ public class Psikus implements IPsikus {
 
         int randomize = random.nextInt(digits.length);
         //loop to delete an element(Array list would be easier ArrayList got .remove method)
-        for (int i = 0; i < digits.length; i++) {
-            if (i == randomize) {
-                digits[i] = null;
-                break;
-            }
-        }
+
         //adding array to new integer
         int i;
         int num = 0;
         for (i = 0; i < digits.length; i++) {
-            num = 10 * num + Integer.parseInt(digits[i]);
+            if(i !=randomize)
+            num = 10 * num + Integer.valueOf(digits[i]);
         }
         return num;
     }
@@ -88,13 +84,13 @@ public class Psikus implements IPsikus {
         List<Integer> six = new ArrayList<Integer>();
         List<Integer> seven = new ArrayList<Integer>();
         for (i = 0; i < digits.length; i++) {
-            if (digits[i] == "3") {
+            if (digits[i].equals("3")) {
                 three.add(i);
             }
-            if (digits[i] == "6") {
+            if (digits[i].equals("6")) {
                 six.add(i);
             }
-            if (digits[i] == "7") {
+            if (digits[i].equals("7")) {
                 seven.add(i);
             }
         }
@@ -107,15 +103,21 @@ public class Psikus implements IPsikus {
         Random random = new Random();
         if (three.size() != 0) {
             randomize = random.nextInt(three.size());
-            digits[randomize] = "8";
+            int val = three.get(randomize);
+            System.out.print(val);
+            digits[val] = "8";
         }
         if (six.size() != 0) {
             randomize = random.nextInt(six.size());
-            digits[randomize] = "9";
+            int val = three.get(randomize);
+            System.out.print(val);
+            digits[val] = "9";
         }
         if (seven.size() != 0) {
             randomize = random.nextInt(seven.size());
-            digits[randomize] = "1";
+            int val = three.get(randomize);
+            System.out.print(val);
+            digits[val] = "1";
         }
         //adding array to new integer
         int num = 0;
