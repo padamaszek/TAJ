@@ -14,20 +14,20 @@ public class DummyMsgServiceTest {
     public void Init() {
         messenger = new Messenger(new DummyMsgService());
     }
-
+//PASSING TESTS
     @Test
-    public void TestConnectionWithServerForValidAdress() {
+    public void TestConnectionWithServerForCorrectAdress() {
         assertThat(messenger.TestConnection("www.wp.pl"), is(0));
-    }
-
-    @Test
-    public void TestConnectionWithServerForInvalidAdress() {
-        assertThat(messenger.TestConnection("www.wp.gov"), is(1));
     }
 
     @Test
     public void SendCommuniqueForCorrectMessageCorrectServer() {
         assertThat(messenger.SendMsg("Message for", "www.interia.pl"), is(anyOf(equalTo(1), equalTo(0))));
+    }
+//FAILURE TEST
+    @Test
+    public void TestConnectionWithServerForWrongAdress() {
+        assertThat(messenger.TestConnection("www.wp.gov"), is(1));
     }
 
     @Test
