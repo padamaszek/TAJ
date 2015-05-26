@@ -37,36 +37,41 @@ public class Psikus implements PsikusImp {
 
     @Override
     public Integer hultajchochla(Integer liczba) throws NieudanyPsikusException {
-        //Split of Integer to string
         String number = String.valueOf(liczba);
-        //List<Integer> digits = new ArrayList<Integer>(); easier way
-        String[] digits = number.split("(?<=.)");
+        List<Integer> digits = new ArrayList<Integer>();
+        for(int i=0;i<number.length();i++){
+            digits.add(number.charAt(i)-48);
+        }
 
         Random random = new Random();
-        int randomize = random.nextInt(digits.length);
-        int randomize2 = random.nextInt(digits.length);
+        int randomize = random.nextInt(digits.size());
+        int randomize2 = random.nextInt(digits.size());
 
-        String pom, pom2;
+        int pom, pom2;
         try {
-            if (digits.length <= 1) {
+            if (digits.size() <= 1) {
                 throw new NieudanyPsikusException("Wrong Length (it should be above 1)");
             }
             //switch
-            pom = digits[randomize];
-            pom2 = digits[randomize2];
-            digits[randomize] = pom2;
-            digits[randomize2] = pom;
+            pom = digits.get(randomize);
+            pom2 = digits.get(randomize2);
+            digits.set(randomize,pom2);
+            digits.set(randomize2,pom);
 
         } catch (NieudanyPsikusException e) {
             System.out.println(e.getMessage());
         }
         //adding array to new integer
-        int i;
-        int num = 0;
-        for (i = 0; i < digits.length; i++) {
-            num = 10 * num + Integer.parseInt(digits[i]);
+        int[] array = new int[digits.size()];
+        for(int j=0;j < array.length ;j++){
+            array[j] = digits.get(j);
         }
-        return num;
+        int res=0;
+        for(int j=0;j < array.length ;j++) {
+            res = 10 * res + array[j];
+        }
+        return res;
+
     }
 
     @Override
@@ -118,7 +123,7 @@ public class Psikus implements PsikusImp {
             array[j] = digits.get(j);
         }
         int res=0;
-        for(int j=0;i < array.length ;j++) {
+        for(int j=0;j < array.length ;j++) {
             res = 10 * res + array[j];
         }
         return res;
