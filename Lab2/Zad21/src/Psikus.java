@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -11,30 +12,27 @@ public class Psikus implements PsikusImp {
     public Integer cyfrokrad(Integer liczba) {
         //Split of Integer to string
         String number = String.valueOf(liczba);
-        //List<Integer> digits = new ArrayList<Integer>(); easier way
-        String[] digits = number.split("(?<=.)");
-        //return null if only 1 element
-        if (digits.length <= 1) {
+        List<Integer> digits = new ArrayList<Integer>();
+        for(int i=0;i<number.length();i++){
+            digits.add(number.charAt(i)-48);
+        }
+        if (digits.size() <=1 ){
             return null;
         }
 
-        Random random = new Random();
+        Random rand = new Random();
+        int random = digits.get(rand.nextInt(digits.size()));
+        digits.remove(random);
 
-        int randomize = random.nextInt(digits.length);
-        //loop to delete an element(Array list would be easier ArrayList got .remove method)
-        for (int i = 0; i < digits.length; i++) {
-            if (digits[i].equals(randomize)) {
-                digits[i] = null;
-                break;
-            }
+        int[] array = new int[digits.size()];
+        for(int i=0;i < array.length ;i++){
+            array[i] = digits.get(i);
         }
-        //adding array to new integer
-        int i;
-        int num = 0;
-        for (i = 0; i < digits.length; i++) {
-            num = 10 * num + Integer.parseInt(digits[i]);
+        int res=0;
+        for(int i=0;i < array.length ;i++) {
+        res = 10 * res + array[i];
         }
-        return num;
+        return res;
     }
 
     @Override
@@ -75,21 +73,23 @@ public class Psikus implements PsikusImp {
     public Integer nieksztaltek(Integer liczba) {
         //Split of Integer to string
         String number = String.valueOf(liczba);
-        //List<Integer> digits = new ArrayList<Integer>(); easier way
-        String[] digits = number.split("(?<=.)");
+        List<Integer> digits = new ArrayList<Integer>();
+        for(int i=0;i<number.length();i++){
+            digits.add(number.charAt(i)-48);
+        }
 
         int i;
         List<Integer> three = new ArrayList<Integer>();
         List<Integer> six = new ArrayList<Integer>();
         List<Integer> seven = new ArrayList<Integer>();
-        for (i = 0; i < digits.length; i++) {
-            if (digits[i] == "3") {
+        for (i = 0; i < digits.size(); i++) {
+            if (digits.get(i) == 3) {
                 three.add(i);
             }
-            if (digits[i] == "6") {
+            if (digits.get(i) == 6) {
                 six.add(i);
             }
-            if (digits[i] == "7") {
+            if (digits.get(i) == 7) {
                 seven.add(i);
             }
         }
@@ -102,22 +102,27 @@ public class Psikus implements PsikusImp {
         Random random = new Random();
         if (three.size() != 0) {
             randomize = random.nextInt(three.size());
-            digits[randomize] = "8";
+            digits.set(randomize,8);
         }
         if (six.size() != 0) {
             randomize = random.nextInt(six.size());
-            digits[randomize] = "9";
+            digits.set(randomize,9);
         }
         if (seven.size() != 0) {
             randomize = random.nextInt(seven.size());
-            digits[randomize] = "1";
+            digits.set(randomize,1);
         }
         //adding array to new integer
-        int num = 0;
-        for (i = 0; i < digits.length; i++) {
-            num = 10 * num + Integer.parseInt(digits[i]);
+        int[] array = new int[digits.size()];
+        for(int j=0;j < array.length ;j++){
+            array[j] = digits.get(j);
         }
+        int res=0;
+        for(int j=0;i < array.length ;j++) {
+            res = 10 * res + array[j];
+        }
+        return res;
 
-        return num;
+
     }
 }

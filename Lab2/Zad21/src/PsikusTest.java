@@ -5,7 +5,7 @@ import org.junit.rules.ExpectedException;
 
 public class PsikusTest {
 
-    private Psikus psikus;
+    private Psikus psikus = new Psikus();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
