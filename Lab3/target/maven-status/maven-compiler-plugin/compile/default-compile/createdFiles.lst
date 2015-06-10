@@ -1,4 +1,3 @@
-com\game\code\NieudanyPsikusException.class
-com\game\code\IPsikus.class
-com\game\code\Psikus.class
-LiczbaRzymska.class
+com\example\maven\game\Psikus.class
+com\example\maven\game\Ipsikus.class
+com\example\maven\game\NieudanyPsikusException.class
