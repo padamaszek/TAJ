@@ -27,20 +27,24 @@ public class PsikusTest {
 
     //chujtajchochla Test
     @Test
-    public void testHultajchochla() throws Exception {
-
-
+    public void hultajchochlaException() throws NieudanyPsikusException {
+        thrown.expect(NieudanyPsikusException.class);
+        psikus.hultajchochla(1);
+    }
+    @Test
+    public void hultajchochlaReturnDifferentNumber() throws NieudanyPsikusException {
+        Assert.assertNotEquals(1345, psikus.hultajchochla(1345).intValue());
     }
 
     //Nieksztaltek Tests:
     @Test
     public void nieksztaltekSameNumberNothingToSwap() {
-        Assert.assertEquals(124, psikus.nieksztaltek(124).intValue());
+        Assert.assertEquals(215, psikus.nieksztaltek(215).intValue());
     }
 
     @Test
     public void nieksztaltekDiffrentNumberSwap() {
-        Assert.assertNotEquals(136, psikus.nieksztaltek(136).intValue());
+        Assert.assertNotEquals(326, psikus.nieksztaltek(326).intValue());
     }
 
 }
