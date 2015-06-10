@@ -21,7 +21,7 @@ public class Psikus implements PsikusImp {
         }
 
         Random rand = new Random();
-        int random = digits.get(rand.nextInt(digits.size()));
+        int random = rand.nextInt(digits.size());
         digits.remove(random);
 
         int[] array = new int[digits.size()];
