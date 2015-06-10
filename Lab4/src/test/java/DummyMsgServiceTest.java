@@ -1,8 +1,10 @@
+import com.example.mock.app.Messenger;
+import com.example.mock.messenger.DummyMsgService;
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
+
 
 /**
  * Created by Hunter on 2015-04-15.
