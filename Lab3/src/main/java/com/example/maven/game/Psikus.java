@@ -20,7 +20,7 @@ public class Psikus implements Ipsikus {
         }
 
         Random rand = new Random();
-        int random = digits.get(rand.nextInt(digits.size()));
+        int random = rand.nextInt(digits.size());
         digits.remove(random);
 
         int[] array = new int[digits.size()];
